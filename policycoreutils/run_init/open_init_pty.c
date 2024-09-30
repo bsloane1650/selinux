@@ -372,7 +372,7 @@ int main(int argc, char *argv[])
 				err_n_stdout++;
 #ifdef DEBUG
 			if (n >= 0)
-				fprintf(stderr, "%d bytes written into stdout\n", n);
+				fprintf(stderr, "%zd bytes written into stdout\n", n);
 			else
 				perror("write(stdout,...)");
 #endif
@@ -387,7 +387,7 @@ int main(int argc, char *argv[])
 				err_n_wpty++;
 #ifdef DEBUG
 			if (n >= 0)
-				fprintf(stderr, "%d bytes written into pty_master\n", n);
+				fprintf(stderr, "%zd bytes written into pty_master\n", n);
 			else
 				perror("write(pty_master,...)");
 #endif
@@ -402,7 +402,7 @@ int main(int argc, char *argv[])
 				err_n_stdin++;
 #ifdef DEBUG
 			if (n >= 0)
-				fprintf(stderr, "%d bytes read from stdin\n", n);
+				fprintf(stderr, "%zd bytes read from stdin\n", n);
 			else
 				perror("read(stdin,...)");
 #endif
@@ -417,7 +417,7 @@ int main(int argc, char *argv[])
 				err_n_rpty++;
 #ifdef DEBUG
 			if (n >= 0)
-				fprintf(stderr, "%d bytes read from pty_master\n", n);
+				fprintf(stderr, "%zd bytes read from pty_master\n", n);
 			else
 				perror("read(pty_master,...)");
 #endif
@@ -431,7 +431,7 @@ int main(int argc, char *argv[])
 		|| !(rb_isempty(&outbuf) || err_n_stdout >= MAXRETR));
 
 #ifdef DEBUG
-	fprintf(stderr, "inbuf: %u bytes left, outbuf: %u bytes left\n", inbuf.count, outbuf.count);
+	fprintf(stderr, "inbuf: %zu bytes left, outbuf: %zu bytes left\n", inbuf.count, outbuf.count);
 	fprintf(stderr, "err_n_rpty=%u, err_n_wpty=%u, err_n_stdin=%u, err_n_stdout=%u\n",
 		err_n_rpty, err_n_wpty, err_n_stdin, err_n_stdout);
 #endif

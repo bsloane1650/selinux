@@ -547,7 +547,7 @@ static void filespec_eval(void)
 	}
 
 	selinux_log(SELINUX_INFO,
-		     "filespec hash table stats: %zu elements, %zu/%zu buckets used, longest chain length %zu\n",
+		     "filespec hash table stats: %zu elements, %zu/%u buckets used, longest chain length %zu\n",
 		     nel, used, HASH_BUCKETS, longest);
 }
 #else
