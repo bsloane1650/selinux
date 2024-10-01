@@ -30,7 +30,7 @@ ifneq ($(DESTDIR),)
 	LIBSEPOLA ?= $(LIBDIR)/libsepol.a
 
 	CFLAGS += -I$(DESTDIR)$(PREFIX)/include
-	LDFLAGS += -L$(DESTDIR)$(PREFIX)/lib -L$(LIBDIR)
+	LDFLAGS += -L$(DESTDIR)/lib -L$(LIBDIR)
 	export CFLAGS
 	export LDFLAGS
 	export LIBSEPOLA
